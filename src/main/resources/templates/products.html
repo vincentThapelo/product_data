@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>DATA LIST</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container-fluid text-center">
+<h2>Manage Products</h2>
+    <a class="h3" th:href="@{/products/new}">Add Product</a>
+    </div>
+<div th:if="${massage}" class="alert alert-success text-center">
+[[${massage}]]
+</div>
+<table class="table table-bordered">
+    <thead class="thead-dark">
+    <tr>
+       <th>ID</th>
+        <th>NAME</th>
+        <th>DESCRIPTION</th>
+        <th>QUANTITY</th>
+        <th>PRICE</th>
+    <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <th:block th:each="products:${listProducts}">
+<tr>
+    <td>[[${products.id}]]</td>
+    <td>[[${products.name}]]</td>
+    <td>[[${products.description}]]</td>
+    <td>[[${products.quantity}]]</td>
+    <td>[[${products.price}]]</td>
+    <td>
+        <a class="h3" th:href="@{'/products/edit/'+${products.id}}">EDIT</a>
+    <a class="h4" th:href="@{'/products/delete/'+${products.id}}">DELETE</a>
+    </td>
+
+</tr>
+
+    </th:block>
+
+    </tbody>
+
+</table>
+</div>
+</body>
+</html>

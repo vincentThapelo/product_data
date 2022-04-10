@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>MAIN</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="Container-fluid text-center">
+<h1 >GLASS SUPPLY DATA BASE</h1>
+<a class="h2" th:href="@{/products}">Manage Data Base</a>
+
+</div>
+<div class="container-fluid text-center m-4">
+<input type="text" required minlength="1" maxlength="45" placeholder="enter name or description to search"/>
+<button><a class="text-center" th:href="@{/products}">Filter</a></button><br><br>
+<input type="text" required minlength="1" maxlength="45" placeholder="Enter price to search"/>
+<button><a class="text-center" th:href="@{/products}">Filter Price</a></button>
+</div>
+</body>
+</html>
